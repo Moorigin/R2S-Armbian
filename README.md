@@ -105,7 +105,7 @@ rm sing-box.deb
 ```
 ### 文件目录规划
 ```
-主程序：/usr/bin/sing-box
+主程序：  /usr/bin/sing-box
 工作目录：/var/lib/sing-box
 配置目录：/etc/sing-box
 服务文件：/etc/systemd/system/sing-box.service
