@@ -26,8 +26,7 @@ deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ jammy-security main restr
 ```
 nano /etc/apt/sources.list.d/armbian.list
 ```
-注释官方源并添加清华源
-编辑 /etc/apt/sources.list.d/armbian.list，将 http://apt.armbian.com 替换为以下链接
+将 http://apt.armbian.com 替换为以下链接
 ```
 https://mirrors.tuna.tsinghua.edu.cn/armbian
 ```
