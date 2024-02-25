@@ -4,6 +4,26 @@
 
 将烧录了 armbian 系统的 tf 卡插入机器通电启动，不会像 openwrt 一样表现为 sys 红灯闪烁直至系统启动完毕红灯常亮，而是 heartbeat 模式双闪。此时需在主路由上查看 armbian 内网地址后通过 ssh 进入进行初始化，并将网关设为主路由地址。
 
+## 使用系统内置的静态IP
+使用SSH连接上R2S，并且用armbian-config命令打开配置界面
+```
+sudo armbian-config
+```
+1、选择“Network”的选项名，按下回车。
+2、选择“IP”的选项名，按下回车。
+3、选择你需要修改的连网口，wlan0指的是无线网络，eth0指的是有线网口，之后回车。
+4、选择“Static”的选项名。并且按下回车。
+（默认的DHCP指的是使用路由的地址分配服务器自动分配IP，Static指的是自己设置静止的IP，所以这里选择Static）
+5、输入你需要的IP地址，按下回车即保存。
+
+Address：IP地址（不知道设置什么IP的话，在这里用DHCP之前分配的IP固定即可）
+
+Netmask：网络掩码（默认为24，不了解的同志使用默认的网络掩码）
+
+Gateway：网关地址（不懂的同志在这里用默认网关地址即可）
+
+DNS：DNS服务器IP（建议设置为网关地址或者223.5.5.5）
+
 ## 更换国内源
 1、以清华源为例编辑 /etc/apt/sources.list 文件
 ```
@@ -47,3 +67,4 @@ GOVERNOR=schedutil
 systemctl daemon-reload
 systemctl restart cpufrequtils
 ```
+## 
