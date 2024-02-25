@@ -93,6 +93,10 @@ wget --no-check-certificate -O tools.sh https://raw.githubusercontent.com/Moorig
 ```
 bash tools.sh
 ```
+不需要修改TCP窗口可直接执行下面命令开启IP转发
+```
+echo 1 > /proc/sys/net/ipv4/ip_forward
+```
 ## 安装Sing-Box
 - Debian/Ubuntu
 ```
@@ -110,10 +114,7 @@ rm sing-box.deb
 配置目录：/etc/sing-box
 服务文件：/etc/systemd/system/sing-box.service
 ```
-## 编辑Sing-Box配置文件
-```
-nano /etc/sing-box/config.json
-```
+### Sing-Box命令
 ```
 启用	sudo systemctl enable sing-box
 禁用	sudo systemctl disable sing-box
@@ -124,4 +125,20 @@ nano /etc/sing-box/config.json
 查看状态	sudo systemctl status sing-box
 查看日志	sudo journalctl -u sing-box --output cat -e
 实时日志	sudo journalctl -u sing-box --output cat -f
+```
+## 编辑Sing-Box配置文件
+```
+nano /etc/sing-box/config.json
+```
+## 启动Sing-Box
+```
+sudo systemctl enable sing-box
+sudo systemctl start sing-box
+```
+## 卸载Sing-Box
+```
+# --purge会把配置也删除，保留配置请移除该参数
+sudo systemctl stop sing-box.service
+sudo systemctl disable sing-box.service
+sudo dpkg --purge sing-box
 ```
