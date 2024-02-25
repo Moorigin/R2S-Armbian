@@ -86,7 +86,7 @@ systemctl restart cpufrequtils
 ```
 wget --no-check-certificate -O tools.sh https://raw.githubusercontent.com/Moorigin/Linux/main/tools.sh && chmod +x tools.sh && ./tools.sh
 ```
-下载速度或无法下载，通过能访问外网的设备直接下载后通过sftp上传，然后执行bash tools.sh
+下载速度或无法下载，通过能访问外网的设备去[项目地址](https://github.com/Moorigin/Linux)下载deb文件,然后通过sftp上传，然后执行bash tools.sh
 ```
 bash tools.sh
 ```
@@ -103,7 +103,7 @@ rm sing-box.deb
 ```
 nano /etc/sing-box/config.json
 ```
-
+```
 启用	sudo systemctl enable sing-box
 禁用	sudo systemctl disable sing-box
 启动	sudo systemctl start sing-box
@@ -113,3 +113,4 @@ nano /etc/sing-box/config.json
 查看状态	sudo systemctl status sing-box
 查看日志	sudo journalctl -u sing-box --output cat -e
 实时日志	sudo journalctl -u sing-box --output cat -f
+```
