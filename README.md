@@ -7,8 +7,8 @@
 
 登入后有一个初始引导，跟着做就行了，没什么好说的。然后这就是一个标准的 Linux 系统了，基本可以直接遵循其他 Linux 的操作方法。但国内许多用户会到手换源，由于 Armbian 是基于其他发行版做的，所以换源不完全一样。其软件源有两个位置，均需要更改：
 
-/etc/apt/sources.list 与你安装的版本所基于的发行版有关，如 Armbian Jammy 基于 Ubuntu Jammy，就换对应的源（如 (清华源)[https://mirrors.tuna.tsinghua.edu.cn/help/ubuntu-ports/]，注意 Ubuntu 使用 Ports 源）；
-/etc/apt/sources.list.d/armbian.list 是 Armbian 专属软件源，也要换（仍然如 (清华源)[https://mirrors.tuna.tsinghua.edu.cn/help/armbian/]）。
+/etc/apt/sources.list 与你安装的版本所基于的发行版有关，如 Armbian Jammy 基于 Ubuntu Jammy，就换对应的源（如 [清华源](https://mirrors.tuna.tsinghua.edu.cn/help/ubuntu-ports)，注意 Ubuntu 使用 Ports 源）；
+/etc/apt/sources.list.d/armbian.list 是 Armbian 专属软件源，也要换（仍然如 [清华源](https://mirrors.tuna.tsinghua.edu.cn/help/armbian)）。
 
 ## 使用系统内置的静态IP
 使用SSH连接上R2S，并且用armbian-config命令打开配置界面
