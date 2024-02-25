@@ -91,6 +91,7 @@ wget --no-check-certificate -O tools.sh https://raw.githubusercontent.com/Moorig
 bash tools.sh
 ```
 ## 安装sing-box
+- Debian/Ubuntu
 ```
 bash <(curl -fsSL https://sing-box.app/deb-install.sh)
 ```
@@ -98,6 +99,13 @@ bash <(curl -fsSL https://sing-box.app/deb-install.sh)
 ```
 sudo dpkg -i sing-box.deb
 rm sing-box.deb
+```
+### 文件目录规划
+```
+主程序：/usr/bin/sing-box
+工作目录：/var/lib/sing-box
+配置目录：/etc/sing-box
+服务文件：/etc/systemd/system/sing-box.service
 ```
 ## 编辑sing-box配置文件
 ```
