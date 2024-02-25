@@ -37,6 +37,8 @@ sudo armbian-config
 
   DNS：DNS服务器IP（建议设置为网关地址或者223.5.5.5）
 
+6、按下回车之后查看路由器后台，或者看设置里的IP位置即可。
+
 ## 更换国内源
 1、以清华源为例编辑 /etc/apt/sources.list 文件
 ```
@@ -80,4 +82,34 @@ GOVERNOR=schedutil
 systemctl daemon-reload
 systemctl restart cpufrequtils
 ```
-## 
+## 优化TCP窗口,开启内核转发
+```
+wget --no-check-certificate -O tools.sh https://raw.githubusercontent.com/Moorigin/Linux/main/tools.sh && chmod +x tools.sh && ./tools.sh
+```
+下载速度或无法下载，通过能访问外网的设备直接下载后通过sftp上传，然后执行bash tools.sh
+```
+bash tools.sh
+```
+## 安装sing-box
+```
+bash <(curl -fsSL https://sing-box.app/deb-install.sh)
+```
+下载速度或无法下载，通过能访问外网的设备去[项目地址](https://github.com/SagerNet/sing-box/releases)下载deb文件,然后通过sftp上传安装
+```
+sudo dpkg -i sing-box.deb
+rm sing-box.deb
+```
+## 编辑sing-box配置文件
+```
+nano /etc/sing-box/config.json
+```
+
+启用	sudo systemctl enable sing-box
+禁用	sudo systemctl disable sing-box
+启动	sudo systemctl start sing-box
+停止	sudo systemctl stop sing-box
+强行停止	sudo systemctl kill sing-box
+重新启动	sudo systemctl restart sing-box
+查看状态	sudo systemctl status sing-box
+查看日志	sudo journalctl -u sing-box --output cat -e
+实时日志	sudo journalctl -u sing-box --output cat -f
