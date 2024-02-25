@@ -1,6 +1,7 @@
 # R2S-Armbian
 ## Armbian 的安装与基础配置
 以下内容基于 Armbian Jammy CLI 版本，默认在 root 权限下操作。
+
 安装 Armbian 的第一步就像 OpenWrt 一样，从 官方网站 下载对应的 img（本文使用基于 Ubuntu 的 Jammy），然后用你的工具烧录进 SD 卡。将 R2S 接入电源，指示灯应该闪烁，不会像 openwrt 一样表现为 sys 红灯闪烁直至系统启动完毕红灯常亮，而是 heartbeat 模式双闪。
 
 初始设置需要将其 WAN 或 LAN 口接到另一台 已经启用 DHCP 的路由器上，此时需在主路由管理员后台上查看 armbian 内网地址后通过 ssh 进入进行初始化，初始用户名和密码分别为 root 和 1234。注意其此时不能作为一个开箱即用的路由器，也就是说不能直接接入电脑。
@@ -8,6 +9,7 @@
 登入后有一个初始引导，跟着做就行了，没什么好说的。然后这就是一个标准的 Linux 系统了，基本可以直接遵循其他 Linux 的操作方法。但国内许多用户会到手换源，由于 Armbian 是基于其他发行版做的，所以换源不完全一样。其软件源有两个位置，均需要更改：
 
 /etc/apt/sources.list 与你安装的版本所基于的发行版有关，如 Armbian Jammy 基于 Ubuntu Jammy，就换对应的源（如 [清华源](https://mirrors.tuna.tsinghua.edu.cn/help/ubuntu-ports)，注意 Ubuntu 使用 Ports 源）；
+
 /etc/apt/sources.list.d/armbian.list 是 Armbian 专属软件源，也要换（仍然如 [清华源](https://mirrors.tuna.tsinghua.edu.cn/help/armbian)）。
 
 ## 使用系统内置的静态IP
