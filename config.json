@@ -76,50 +76,7 @@
             "interrupt_exist_connections": false
         },
         {
-            "tag": "AperNet",
-            "type": "shadowsocks",
-            "method": "aes-256-gcm",
-            "password": "ZCLQ20020312",
-            "udp_over_tcp": {
-                "enabled": true,
-                "version": 2
-            },
-            "detour": "shadowtls-hk"
-        },
-        {
-            "tag": "shadowtls-hk",
-            "type": "shadowtls",
-            "server": "hk.zdcy.org",
-            "server_port": 8443,
-            "version": 3,
-            "password": "ZCLQ20020312",
-            "tls": {
-                "enabled": true,
-                "server_name": "itunes.apple.com"
-            }
-        },
-        {
-            "tag": "DMIT",
-            "type": "shadowsocks",
-            "method": "aes-256-gcm",
-            "password": "ZCLQ20020312",
-            "udp_over_tcp": {
-                "enabled": true,
-                "version": 2
-            },
-            "detour": "shadowtls-us"
-        },
-        {
-            "tag": "shadowtls-us",
-            "type": "shadowtls",
-            "server": "us.zdcy.org",
-            "server_port": 8443,
-            "version": 3,
-            "password": "ZCLQ20020312",
-            "tls": {
-                "enabled": true,
-                "server_name": "itunes.apple.com"
-            }
+            //输入自己的出站配置
         },
         {
             "tag": "direct",
@@ -249,7 +206,7 @@
     },
     "experimental": {
         "clash_api": {
-            "external_controller": "127.0.0.1:9090",
+            "external_controller": "192.168.2.10:9090",
             "external_ui": "ui",
             "external_ui_download_url": "",
             "default_mode": "rule",
