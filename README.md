@@ -85,7 +85,7 @@ GOVERNOR=schedutil
 systemctl daemon-reload
 systemctl restart cpufrequtils
 ```
-## 优化TCP窗口,开启内核转发
+## 优化TCP窗口,开启内核转发(Tun模式)
 ```
 wget --no-check-certificate -O tools.sh https://raw.githubusercontent.com/Moorigin/Linux/main/tools.sh && chmod +x tools.sh && ./tools.sh
 ```
